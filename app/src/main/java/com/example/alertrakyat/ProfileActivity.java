@@ -54,8 +54,8 @@ public class ProfileActivity extends AppCompatActivity {
 
                     case R.id.nav_report:
                         // Navigate to SettingsActivity
-                        startActivity(new Intent(ProfileActivity.this, ReportActivity.class));
-                        overridePendingTransition(0, 0); // Optional: No animation
+//                        startActivity(new Intent(ProfileActivity.this, ReportActivity.class));
+//                        overridePendingTransition(0, 0); // Optional: No animation
                         return true;
 
                     case R.id.nav_profile:
@@ -123,8 +123,8 @@ public class ProfileActivity extends AppCompatActivity {
         emergencyCallButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(ProfileActivity.this, EmergencyCallActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(ProfileActivity.this, EmergencyActivity.class);
+                startActivity(intent);
             }
         });
     }

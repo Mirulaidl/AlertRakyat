@@ -70,7 +70,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
                 case R.id.nav_report:
                     // Navigate to ReportActivity
-                    startActivity(new Intent(MapActivity.this, ReportActivity.class));
+                    startActivity(new Intent(MapActivity.this, CReportActivity.class));
                     overridePendingTransition(0, 0); // Optional
                     finish(); // Optional
                     return true;
@@ -118,21 +118,21 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 .position(earthquakearea)
                 .title("Earthquake")
                 .snippet("Severity: High")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.earthquake)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.gempa)));
 
         // Marker for flood area with high severity (Red color)
         myMap.addMarker(new MarkerOptions()
                 .position(floodArea1)
                 .title("Flood Zone")
                 .snippet("Severity: High")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.flooded_house)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.banjir1)));
 
 // Marker for flood area with medium severity (Yellow color)
         myMap.addMarker(new MarkerOptions()
                 .position(floodArea2)
                 .title("Flood Zone")
                 .snippet("Severity: Medium")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.flooded_house_medium)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.banjir2)));
 
 // Circle for flood area 1 (High severity)
         myMap.addCircle(new CircleOptions()

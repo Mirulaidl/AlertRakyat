@@ -2,6 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.hardware.sensor.barometer" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,25 +32,10 @@
         android:theme="@style/Theme.AlertRakyat"
         tools:targetApi="31">
         <activity
-            android:name=".ReportAdapter"
-            android:exported="false" />
-        <activity
             android:name=".ReportAct"
             android:exported="false" />
         <activity
-            android:name=".ReportActivity"
-            android:exported="false" />
-        <activity
             android:name=".CReportActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ArticleAdapterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ArticleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".article"
             android:exported="false" />
         <activity
             android:name=".MapActivity"
@@ -41,9 +45,6 @@
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Profile"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
@@ -63,6 +64,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCYXiQ_Ox5Z-6hM_SBp_tC4JEiUUebCB6g" />
     </application>
 
 </manifest>

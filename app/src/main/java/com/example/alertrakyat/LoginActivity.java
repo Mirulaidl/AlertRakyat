@@ -35,11 +35,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser != null){
-//            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
+        if(currentUser != null){
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
 
@@ -49,10 +49,10 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
-        Email_ET = findViewById(R.id.Email_ET);
-        Password_ET = findViewById(R.id.Password_ET);
-        Login_BTN = findViewById(R.id.Login_BTN);
-        SignUp_TV = findViewById(R.id.SignUp_TV);
+        Email_ET = findViewById(R.id.etEmail);
+        Password_ET = findViewById(R.id.etPassword);
+        Login_BTN = findViewById(R.id.btnLogin);
+        SignUp_TV = findViewById(R.id.tvSignup);
         progressBar = findViewById(R.id.ProgressBar);
 
         SignUp_TV.setOnClickListener(new View.OnClickListener() {
@@ -84,16 +84,16 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
-//                                if (task.isSuccessful()) {
-//                                    Toast.makeText(LoginActivity.this, "Login Success.", Toast.LENGTH_SHORT).show();
-//                                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-//                                    startActivity(intent);
-//                                    finish();
-//
-//                                } else {
-//                                    String errorMessage = task.getException() != null ? task.getException().getMessage() : "Unknown error";
-//                                    Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-//                                }
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(LoginActivity.this, "Login Success.", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+
+                                } else {
+                                    String errorMessage = task.getException() != null ? task.getException().getMessage() : "Unknown error";
+                                    Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
 

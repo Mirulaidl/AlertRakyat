@@ -21,7 +21,7 @@
 <!--    android:fontFamily="@font/amaranth_bold"-->
 
     <TextView
-        android:id="@+id/Email_TV"
+        android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.266" />
 
     <EditText
-        android:id="@+id/Email_ET"
+        android:id="@+id/etEmail"
         android:layout_width="279dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.308" />
 
     <TextView
-        android:id="@+id/Password_TV"
+        android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.386" />
 
     <EditText
-        android:id="@+id/Password_ET"
+        android:id="@+id/etPassword"
         android:layout_width="275dp"
         android:layout_height="49dp"
         android:ems="10"
@@ -84,7 +84,7 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/Login_BTN"
+        android:id="@+id/btnLogin"
         android:layout_width="129dp"
         android:layout_height="53dp"
         android:text="Login"
@@ -95,10 +95,10 @@
         app:layout_constraintVertical_bias="0.579" />
 
     <TextView
-        android:id="@+id/SignUp_TV"
+        android:id="@+id/tvSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="TV_SignUp"
+        android:onClick="SignUp_TV"
         android:text="Register"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -129,7 +129,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_BTN"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
         app:layout_constraintVertical_bias="0.5"
          />
 <!--    app:srcCompat="@drawable/logo"-->
