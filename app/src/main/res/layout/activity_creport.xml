@@ -5,54 +5,75 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DBDADA"
     tools:context=".CReportActivity">
 
-    <EditText
-        android:id="@+id/report_name"
-        android:layout_width="355dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="20dp"
-        android:hint="Report Title"
+    <Button
+        android:id="@+id/submit_report"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="#FFEB3B"
+        android:padding="12dp"
+        android:text="Make Report"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/report_description" />
 
     <EditText
         android:id="@+id/report_date"
-        android:layout_width="349dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittext_background"
         android:hint="Report Date"
         android:inputType="date"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#1565C0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/report_name" />
 
     <EditText
         android:id="@+id/report_description"
-        android:layout_width="349dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittext_background"
         android:hint="Report Description"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#1565C0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/report_date" />
 
-    <Button
-        android:id="@+id/submit_report"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Make Report"
-        app:layout_constraintTop_toBottomOf="@id/report_description"
-        app:layout_constraintStart_toStartOf="parent"
+    <EditText
+        android:id="@+id/report_name"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Report Title"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#1565C0"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        android:background="#1565C0"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         app:menu="@menu/bottom_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

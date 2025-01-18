@@ -5,20 +5,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DBDADA"
     tools:context=".ProfileActivity">
 
-
+    <!-- Username Label -->
     <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Username"
+        android:textColor="#1565C0"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Username Field -->
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="300dp"
@@ -27,105 +30,130 @@
         android:enabled="false"
         android:hint="Enter username"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvEmail"
+        android:background="@drawable/edittext_background"
+        android:textColorHint="#1565C0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUsername"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
 
+    <!-- Email Label -->
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Email"
+        android:textColor="#1565C0"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etUsername" />
 
+    <!-- Email Field -->
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="300dp"
-        android:layout_height="59dp"
+        android:layout_height="56dp"
         android:layout_marginTop="8dp"
         android:enabled="false"
         android:hint="Enter email"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvPhonenum"
+        android:background="@drawable/edittext_background"
+        android:textColorHint="#1565C0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
+    <!-- Phone Number Label -->
     <TextView
         android:id="@+id/tvPhonenum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Phone Number"
+        android:textColor="#1565C0"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etEmail" />
 
+    <!-- Phone Number Field -->
     <EditText
         android:id="@+id/etPhonenum"
         android:layout_width="300dp"
-        android:layout_height="59dp"
+        android:layout_height="56dp"
         android:layout_marginTop="8dp"
         android:enabled="false"
         android:hint="Enter phone number"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnEdit"
+        android:background="@drawable/edittext_background"
+        android:textColorHint="#1565C0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPhonenum"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPhonenum" />
 
-    <Button
-        android:id="@+id/btnEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Edit Profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etPhonenum" />
+    <!-- Edit Profile Button -->
+
+    <!-- Delete Account Button -->
+
+    <!-- Emergency Call Button -->
 
     <Button
         android:id="@+id/btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#FFEB3B"
         android:text="Delete Account"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnEdit" />
 
     <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="113dp"
-        android:layout_height="51dp"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btnEdit"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#FFEB3B"
+        android:text="Edit Profile"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintTop_toBottomOf="@id/etPhonenum" />
+
+    <!-- Logout Button -->
+
+    <!-- Bottom Navigation -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFEB3B"
+        android:text="Logout"
+        android:textColor="#0D0D0D"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEmergencycall" />
 
     <Button
         android:id="@+id/btnEmergencycall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#FFEB3B"
         android:text="Emergency Call"
+        android:textColor="#070707"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnDelete" />
 
@@ -133,9 +161,12 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        android:background="#1565C0"
+        app:itemTextColor="@android:color/white"
+        app:itemIconTint="@android:color/white"
+        app:menu="@menu/bottom_menu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_menu" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
