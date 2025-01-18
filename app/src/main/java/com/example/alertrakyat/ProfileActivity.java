@@ -56,8 +56,8 @@ public class ProfileActivity extends AppCompatActivity {
 
                     case R.id.nav_report:
                         // Navigate to SettingsActivity
-//                        startActivity(new Intent(ProfileActivity.this, ReportActivity.class));
-//                        overridePendingTransition(0, 0); // Optional: No animation
+                        startActivity(new Intent(ProfileActivity.this, ReportAct.class));
+                        overridePendingTransition(0, 0); // Optional: No animation
                         return true;
 
                     case R.id.nav_profile:
