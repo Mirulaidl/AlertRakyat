@@ -70,7 +70,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
                 case R.id.nav_report:
                     // Navigate to ReportActivity
-                    startActivity(new Intent(MapActivity.this, CReportActivity.class));
+                    startActivity(new Intent(MapActivity.this, ReportAct.class));
                     overridePendingTransition(0, 0); // Optional
                     finish(); // Optional
                     return true;

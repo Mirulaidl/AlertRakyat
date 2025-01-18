@@ -53,12 +53,12 @@ public class SignupActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         // Initialize views
-        Password_ET = findViewById(R.id.Password_ET);
-        Email_ET = findViewById(R.id.Email_ET);
-        Username_ET = findViewById(R.id.username_ET);  // Add this line
-        NoPhone_ET = findViewById(R.id.noPhone_ET);  // Add this line
-        SignUp_BTN = findViewById(R.id.signUp_BTN);
-        Back_BTN = findViewById(R.id.Back_BTN);
+        Password_ET = findViewById(R.id.etPassword);
+        Email_ET = findViewById(R.id.etEmail);
+        Username_ET = findViewById(R.id.etUsername);  // Add this line
+        NoPhone_ET = findViewById(R.id.etNophone);  // Add this line
+        SignUp_BTN = findViewById(R.id.btnSignup);
+        Back_BTN = findViewById(R.id.btnBack);
         progressBar = findViewById(R.id.progressBar); // Make sure you have a ProgressBar in your layout
 
         Back_BTN.setOnClickListener(new View.OnClickListener() {

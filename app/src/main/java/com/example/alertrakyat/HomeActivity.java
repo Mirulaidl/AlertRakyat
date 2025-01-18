@@ -41,9 +41,6 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
     private Sensor accelerometerSensor, barometerSensor;
     private SensorManager sensorManager;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,9 +52,9 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
         List<Article> articles = new ArrayList<>();
 
 // Add some articles
-        articles.add(new Article("The Straits Times logo", "Flooding in Malaysia displaces over 66,000, 5 deaths reported", "KUALA LUMPUR - Severe flooding in parts of Malaysia has resulted in the displacement of 66,718 people in five states", "https://www.straitstimes.com/asia/se-asia/flooding-in-malaysia-displaces-over-56000-5-deaths-reported"));
-        articles.add(new Article("Thoughts", "MALAYSIA’S FLASH FLOODS SPOTLIGHT PLASTIC POLLUTION", "The flash floods that continue to strike various parts of Peninsular Malaysia are not just a natural calamity; they are a stark reminder of a persistent problem", "https://www.bernama.com/en/thoughts/news.php?id=2277614"));
-        articles.add(new Article("AP", "3 dead and over 90,000 displaced as Malaysia prepares for its worst floods in a decade", "KUALA LUMPUR, Malaysia (AP) — Malaysia is preparing for its worst floods in a decade after heavier-than-expected monsoon rains caused severe flooding that killed three people and displaced more than 90,000.", "https://apnews.com/article/malaysia-floods-monsoon-rains-08532d729eb70026e968b1ee34b029c6"));
+        articles.add(new Article("The Star", "Floods: 10,000 people affected in Pitas", "KOTA KINABALU: Some 10,000 residents are estimated to be affected by floods in the rural Pitas district as of 9pm on Friday (Jan 17).", "https://www.thestar.com.my/news/nation/2025/01/18/floods-10000-people-affected-in-pitas"));
+        articles.add(new Article("reliefweb", "Malaysia: Floods - Nov 2024", "Peninsular Malaysia, including Johor, Kelantan, Pahang, Perak, and Terengganu States continues to experience heavy rainfall and consequent floods that resulted in displacements and damage.", "https://reliefweb.int/disaster/fl-2024-000218-mys"));
+        articles.add(new Article("The Straits Time", "Floods displace close to 139,000 people in Malaysia with death toll at 4", "KUALA LUMPUR – Almost 139,000 people have been forced out of their homes as massive floods caused by relentless rain swept through Malaysia’s northern states, disaster officials said on Nov 30.", "https://www.straitstimes.com/asia/se-asia/floods-displace-122000-people-in-malaysia"));
 
         ArticleAdapterActivity adapter = new ArticleAdapterActivity(this, articles);
         articleRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -86,7 +83,7 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
 
                     case R.id.nav_report:
                         // Navigate to SettingsActivity
-                        startActivity(new Intent(HomeActivity.this, CReportActivity.class));
+                        startActivity(new Intent(HomeActivity.this, ReportAct.class));
                         overridePendingTransition(0, 0); // Optional: No animation
                         return true;
 
@@ -160,17 +157,17 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
             sensorData.setText("Movement: " + movement);
         }
 
-        if (event.sensor.getType() == Sensor.TYPE_PRESSURE) {
-            float pressure = event.values[0];
-
-            // Check pressure for weather/haze prediction
-            if (pressure < 1000) {
-                Toast.makeText(this, "Low pressure detected! Potential storm or haze conditions.", Toast.LENGTH_SHORT).show();
-            }
-
-            // Update TextView for pressure data
-            sensorData.append("\nPressure: " + pressure + " hPa");
-        }
+//        if (event.sensor.getType() == Sensor.TYPE_PRESSURE) {
+//            float pressure = event.values[0];
+//
+//            // Check pressure for weather/haze prediction
+//            if (pressure < 1000) {
+//                Toast.makeText(this, "Low pressure detected! Potential storm or haze conditions.", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            // Update TextView for pressure data
+//            sensorData.append("\nPressure: " + pressure + " hPa");
+//        }
     }
 
 

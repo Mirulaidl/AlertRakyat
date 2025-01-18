@@ -8,7 +8,7 @@
     tools:context=".SignupActivity">
 
     <EditText
-        android:id="@+id/username_ET"
+        android:id="@+id/etUsername"
         android:layout_width="261dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.158" />
 
     <Button
-        android:id="@+id/Back_BTN"
+        android:id="@+id/btnBack"
         android:layout_width="125dp"
         android:layout_height="48dp"
         android:text="BACK"
@@ -37,12 +37,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUp_BTN"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo1" />
 
     <TextView
-        android:id="@+id/Password_TV"
+        android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.041" />
 
     <EditText
-        android:id="@+id/noPhone_ET"
+        android:id="@+id/etNophone"
         android:layout_width="261dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -91,7 +91,7 @@
         app:layout_constraintVertical_bias="0.265" />
 
     <EditText
-        android:id="@+id/Email_ET"
+        android:id="@+id/etEmail"
         android:layout_width="261dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -104,7 +104,7 @@
         app:layout_constraintVertical_bias="0.384" />
 
     <EditText
-        android:id="@+id/Password_ET"
+        android:id="@+id/etPassword"
         android:layout_width="262dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -118,7 +118,7 @@
         app:layout_constraintVertical_bias="0.484" />
 
     <TextView
-        android:id="@+id/noPhone_TV"
+        android:id="@+id/tvNophone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No Phone"
@@ -130,7 +130,7 @@
         app:layout_constraintVertical_bias="0.23" />
 
     <Button
-        android:id="@+id/signUp_BTN"
+        android:id="@+id/btnSignup"
         android:layout_width="125dp"
         android:layout_height="48dp"
         android:text="SIGNUP"
@@ -141,7 +141,7 @@
         app:layout_constraintVertical_bias="0.576" />
 
     <TextView
-        android:id="@+id/username_TV"
+        android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
