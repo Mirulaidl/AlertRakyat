@@ -13,6 +13,27 @@
         android:theme="@style/Theme.AlertRakyat"
         tools:targetApi="31">
         <activity
+            android:name=".ReportAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".ReportAct"
+            android:exported="false" />
+        <activity
+            android:name=".ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticleAdapterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".article"
+            android:exported="false" />
+        <activity
             android:name=".MapActivity"
             android:exported="false" />
         <activity
