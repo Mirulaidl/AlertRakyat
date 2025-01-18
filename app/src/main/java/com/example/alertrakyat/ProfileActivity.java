@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private EditText usernameEditText, emailEditText, noPhoneEditText;
@@ -79,7 +81,7 @@ public class ProfileActivity extends AppCompatActivity {
         deleteAccountButton = findViewById(R.id.btnDelete);
 
         // Set fields to display user data (fetch from Firebase)
-        String userId = mAuth.getCurrentUser().getUid();
+        String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         mDatabase.child("users").child(userId).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 User user = task.getResult().getValue(User.class);

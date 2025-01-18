@@ -3,15 +3,15 @@ package com.example.alertrakyat;
 public class User {
     private String username;
     private String email;
-    private String phonenum;
+    private String noPhone;
 
     // Default constructor required for calls to DataSnapshot.getValue(User.class)
     public User() {}
 
-    public User(String username, String email, String phonenum) {
+    public User(String username, String email, String noPhone) {
         this.username = username;
         this.email = email;
-        this.phonenum = phonenum;
+        this.noPhone = noPhone;
     }
 
     public String getUsername() {
@@ -31,11 +31,11 @@ public class User {
     }
 
     public String getNoPhone() {
-        return phonenum;
+        return noPhone;
     }
 
     public void setNoPhone(String noPhone) {
-        this.phonenum = noPhone;
+        this.noPhone = noPhone;
     }
 }
 
