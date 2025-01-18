@@ -59,7 +59,7 @@ public class ReportAct extends AppCompatActivity {
         addReportButton = findViewById(R.id.add_report);
         addReportButton.setOnClickListener(v -> {
             // Navigate to CreateReport activity
-            startActivity(new Intent(ReportAct.this, CreateReport.class));
+            startActivity(new Intent(ReportAct.this, CReportActivity.class));
         });
 
         // Load reports for the current user from Firebase

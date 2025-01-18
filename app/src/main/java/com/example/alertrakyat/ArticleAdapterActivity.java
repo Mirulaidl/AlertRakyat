@@ -64,4 +64,3 @@ public class ArticleAdapterActivity extends RecyclerView.Adapter<ArticleAdapterA
     }
 
 }
-}

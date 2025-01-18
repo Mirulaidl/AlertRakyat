@@ -34,7 +34,7 @@ public class CReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_create_report);
+        setContentView(R.layout.activity_creport);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -70,19 +70,19 @@ public class CReportActivity extends AppCompatActivity {
 
                     case R.id.nav_map:
                         // Navigate to MapActivity
-                        startActivity(new Intent(CreateReport.this, MapActivity.class));
+                        startActivity(new Intent(CReportActivity.this, MapActivity.class));
                         overridePendingTransition(0, 0); // Optional: No animation
                         return true;
 
                     case R.id.nav_report:
                         // Navigate to SettingsActivity
-                        startActivity(new Intent(CreateReport.this, ReportActivity.class));
+                        startActivity(new Intent(CReportActivity.this, ReportAct.class));
                         overridePendingTransition(0, 0); // Optional: No animation
                         return true;
 
                     case R.id.nav_profile:
                         // Navigate to SettingsActivity
-                        startActivity(new Intent(CreateReport.this, ProfileActivity.class));
+                        startActivity(new Intent(CReportActivity.this, ProfileActivity.class));
                         overridePendingTransition(0, 0); // Optional: No animation
                         return true;
 
@@ -112,12 +112,12 @@ public class CReportActivity extends AppCompatActivity {
 
             database.child(reportId).setValue(newReport).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(CreateReport.this, "Report Created Successfully!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(CreateReport.this, ReportActivity.class);
+                    Toast.makeText(CReportActivity.this, "Report Created Successfully!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(CReportActivity.this, ReportAct.class);
                     startActivity(intent);
                     finish(); // Close the CreateReport activity
                 } else {
-                    Toast.makeText(CreateReport.this, "Failed to create report", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CReportActivity.this, "Failed to create report", Toast.LENGTH_SHORT).show();
                     Log.e("FirebaseError", "Error: ", task.getException());
                 }
             });
