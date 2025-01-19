@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="16dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F69898"
@@ -28,6 +28,7 @@
             android:padding="16dp">
 
             <!-- Report Name TextView showing "Report 1", "Report 2", etc. -->
+
             <TextView
                 android:id="@+id/report_number"
                 android:layout_width="wrap_content"
@@ -40,6 +41,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <!-- Report Date -->
             <TextView
                 android:id="@+id/report_name"
                 android:layout_width="wrap_content"
@@ -49,21 +51,23 @@
                 android:padding="8dp"
                 android:text="Report Title"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:layout_toEndOf="@+id/report_number" />
 
-            <!-- Report Date -->
+            <!-- Report Description -->
             <TextView
                 android:id="@+id/report_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
                 android:layout_marginBottom="8dp"
+                android:layout_toEndOf="@+id/report_name"
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="Date"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
-            <!-- Report Description -->
             <TextView
                 android:id="@+id/report_description"
                 android:layout_width="wrap_content"
@@ -72,17 +76,22 @@
                 android:padding="8dp"
                 android:text="Description"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:layout_below="@id/report_date"/>
 
             <!-- Delete Button -->
             <Button
                 android:id="@+id/delete_report_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/report_date"
+                android:layout_marginStart="98dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/report_description"
                 android:text="Delete"
                 android:textColor="#FFFFFF" />
 
-        </LinearLayout>
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
