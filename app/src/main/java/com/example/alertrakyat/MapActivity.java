@@ -118,21 +118,21 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 .position(earthquakearea)
                 .title("Earthquake")
                 .snippet("Severity: High")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.gempa)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.efqk)));
 
         // Marker for flood area with high severity (Red color)
         myMap.addMarker(new MarkerOptions()
                 .position(floodArea1)
                 .title("Flood Zone")
                 .snippet("Severity: High")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.banjir1)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.fl)));
 
 // Marker for flood area with medium severity (Yellow color)
         myMap.addMarker(new MarkerOptions()
                 .position(floodArea2)
                 .title("Flood Zone")
                 .snippet("Severity: Medium")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.banjir2)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.fl)));
 
 // Circle for flood area 1 (High severity)
         myMap.addCircle(new CircleOptions()
