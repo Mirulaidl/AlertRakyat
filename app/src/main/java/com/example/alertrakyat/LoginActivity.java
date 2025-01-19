@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         Email_ET = findViewById(R.id.etEmail);
         Password_ET = findViewById(R.id.etPassword);
         Login_BTN = findViewById(R.id.btnLogin);
-        SignUp_TV = findViewById(R.id.tvSignup);
+        SignUp_TV = findViewById(R.id.tv5);
         progressBar = findViewById(R.id.ProgressBar);
 
         SignUp_TV.setOnClickListener(new View.OnClickListener() {

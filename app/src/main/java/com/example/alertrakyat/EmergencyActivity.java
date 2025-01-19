@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -33,33 +34,58 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.alertrakyat.databinding.ActivityEmergencyBinding;
+
+import java.util.ArrayList;
+
 public class EmergencyActivity extends AppCompatActivity {
 
-    Button EmergencyCall_BTN;
+    ActivityEmergencyBinding binding;
+    mergencyAdapter mergencyAdapter;
+    ArrayList<mergency> mergencyArrayList = new ArrayList<>();
+    mergency mergencyData;
+
+    private String[] numberList;
+    private int lastSelectedPosition = -1;
     private static final int REQUEST_CALL_PERMISSION = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_emergency);
+        binding = ActivityEmergencyBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        EmergencyCall_BTN = findViewById(R.id.EmergencyCall_BTN);
+        int[] imageList = {R.mipmap.foreground_kkm, R.mipmap.jpam2_foreground, R.mipmap.nadma_foreground, R.mipmap.bomba_foreground, R.mipmap.polis_foreground};
+        String[] nameList = {"Kementerian Kesihatan Malaysia", "Jabatan Pertahanan Awam Malaysia", "Agensi Pengurusan Bencana Negara", "Jabatan Bomba dan Penyelamat Malaysia", "Kementerian Kesihatan Malaysia"};
+        String[] numberList = {"1234", "1234", "1234", "1234", "1234"};
 
-        EmergencyCall_BTN.setOnClickListener(new View.OnClickListener() {
+        for (int i = 0; i < imageList.length; i++){
+            mergencyData = new mergency(nameList[i],numberList[i],imageList[i]);
+            mergencyArrayList.add(mergencyData);
+        }
+        mergencyAdapter = new mergencyAdapter(EmergencyActivity.this, mergencyArrayList);
+        binding.listView.setAdapter(mergencyAdapter);
+        binding.listView.setClickable(true);
+
+        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                makeEmergencyCall();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                lastSelectedPosition = position; // Save the position of the selected item
+                if (ContextCompat.checkSelfPermission(EmergencyActivity.this, android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    makeEmergencyCall(numberList, position);
+                } else {
+                    ActivityCompat.requestPermissions(EmergencyActivity.this, new String[]{android.Manifest.permission.CALL_PHONE}, REQUEST_CALL_PERMISSION);
+                }
             }
         });
+
     }
 
-    private void makeEmergencyCall() {
-        String emergencyNumber = "0193119028"; // Change this number to the emergency number you need
-
+    private void makeEmergencyCall(String[] num, int position) {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
             Intent callIntent = new Intent(Intent.ACTION_CALL);
-            callIntent.setData(Uri.parse("tel:" + emergencyNumber));
+            callIntent.setData(Uri.parse("tel:" + num[position]));
             startActivity(callIntent);
         } else {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CALL_PHONE}, REQUEST_CALL_PERMISSION);
@@ -71,8 +97,10 @@ public class EmergencyActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (requestCode == REQUEST_CALL_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                makeEmergencyCall();
+            if (grantResults.length > 0 && grantResults[0] == PERMISSION_GRANTED) {
+                if (lastSelectedPosition != -1) {
+                    makeEmergencyCall(numberList, lastSelectedPosition);
+                }
             } else {
                 Toast.makeText(this, "Permission Denied! Cannot make the call.", Toast.LENGTH_SHORT).show();
             }
